@@ -24,20 +24,28 @@ function Stopwatch() {
 
     return () => clearInterval(interval);
   }, [startTimer, seconds, minutes]);
+
+  function stopTimer(){
+    setStartTimer(false),
+    setHour(0),
+    setMinutes(0),
+    setSeconds(0)
+  }
   return (
     <div className="flex justify-center items-center flex-col mt-10 gap-20">
-      <div className="flex ">
+      <div className="flex gap-20 ">
         <div onClick={() => setStartTimer(!startTimer)}>
           {!startTimer ? (
-            <img src={start} alt="start" className="cursor-pointer" />
+            <img src={start} alt="start" className="cursor-pointer" title="Start Timer"/>
           ) : (
-            <img src={pause} alt="pause" className="cursor-pointer" />
+            <img src={pause} alt="pause" className="cursor-pointer" title="Pause Timer" />
           )}
         </div>
-        {startTimer === true ? <img src={stop} alt="stop" /> : ""}
+        {startTimer === true || (hour>0||seconds>0 || minutes>0) ? <img src={stop} alt="stop" title="Stop TImer"  className="cursor-pointer" onClick={stopTimer}/> : ""}
+       
       </div>
 <div>
-    <img src={stopwatch} alt="stopwatch" />
+    <img src={stopwatch} alt="stopwatch"  />
 </div>
       <div className="flex gap-15 text-white font-semibold text-3xl">
         <div>
