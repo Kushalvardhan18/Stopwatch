@@ -6,7 +6,7 @@ function App() {
   const [toggle, setToggle] = useState("Stopwatch");
 
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col">
+    <div className="bg-[#09122C] min-h-screen flex flex-col">
       <div className=" flex justify-center">
         <div className="w-60 h-12 bg-white flex p-1 rounded-xl mt-20">
           <div

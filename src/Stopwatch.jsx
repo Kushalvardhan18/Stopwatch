@@ -36,12 +36,12 @@ function Stopwatch() {
       <div className="flex gap-20 ">
         <div onClick={() => setStartTimer(!startTimer)}>
           {!startTimer ? (
-            <img src={start} alt="start" className="cursor-pointer" title="Start Timer"/>
+            <img src={start} alt="start" className="cursor-pointer hover:scale-105  transition-all duration-200 " title="Start Timer"/>
           ) : (
-            <img src={pause} alt="pause" className="cursor-pointer" title="Pause Timer" />
+            <img src={pause} alt="pause" className="cursor-pointer hover:scale-105  transition-all duration-200" title="Pause Timer" />
           )}
         </div>
-        {startTimer === true || (hour>0||seconds>0 || minutes>0) ? <img src={stop} alt="stop" title="Stop TImer"  className="cursor-pointer" onClick={stopTimer}/> : ""}
+        {startTimer === true || (hour>0||seconds>0 || minutes>0) ? <img src={stop} alt="stop" title="Stop TImer"  className="cursor-pointer hover:scale-105  transition-all duration-200" onClick={stopTimer}/> : ""}
        
       </div>
 <div>
