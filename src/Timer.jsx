@@ -51,17 +51,29 @@ function Timer() {
             <img
               src={start}
               alt="start"
-              className={`${seconds <= 0 && hour <= 0 && minutes <= 0 ? "cursor-not-allowed" : "cursor-pointer hover:scale-105  transition-all duration-200"}` }
+              className={`${seconds <= 0 && hour <= 0 && minutes <= 0 ? "cursor-not-allowed" : "cursor-pointer hover:scale-105  transition-all duration-200"}`}
               title="Start Timer"
             />
           ) : (
-            <img src={pause} alt="pause" className="cursor-pointer hover:scale-105  transition-all duration-200" title="Pause Timer"/>
+            <img
+              src={pause}
+              alt="pause"
+              className="cursor-pointer hover:scale-105  transition-all duration-200"
+              title="Pause Timer"
+            />
           )}
         </div>
         {startTimer && seconds >= 0 && hour >= 0 && minutes >= 0 ? (
-          <img src={stop} alt="stop" onClick={stopTimer} className="cursor-pointer hover:scale-105  transition-all duration-200" title="Stop Timer"/>
-        
-        ):""}
+          <img
+            src={stop}
+            alt="stop"
+            onClick={stopTimer}
+            className="cursor-pointer hover:scale-105  transition-all duration-200"
+            title="Stop Timer"
+          />
+        ) : (
+          ""
+        )}
       </div>
       <div>
         <img src={timer} alt="timer" />
@@ -81,7 +93,7 @@ function Timer() {
               setHour(value);
             }}
             inputMode="numeric"
-            className="text-center"
+            className="w-30 rounded-xl border border-gray-500 bg-transparent py-3 text-center text-4xl text-white outline-none transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40"
           />
 
           <div>Hrs</div>
@@ -99,7 +111,7 @@ function Timer() {
               const value = Math.min(59, Math.max(0, Number(e.target.value)));
               setMinutes(value);
             }}
-            className="text-center"
+            className="w-30 rounded-xl border border-gray-500 bg-transparent py-3 text-center text-4xl text-white outline-none transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40"
           />
           <div>Min</div>
         </div>
@@ -116,7 +128,7 @@ function Timer() {
               const value = Math.min(59, Math.max(0, Number(e.target.value)));
               setSeconds(value);
             }}
-            className="text-center"
+            className="w-30 rounded-xl border border-gray-500 bg-transparent py-3 text-center text-4xl text-white outline-none transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40"
           />
           <div>Sec</div>
         </div>
