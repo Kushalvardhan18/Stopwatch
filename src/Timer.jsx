@@ -51,14 +51,15 @@ function Timer() {
             <img
               src={start}
               alt="start"
-              className={`${seconds <= 0 && hour <= 0 && minutes <= 0 ? "cursor-not-allowed" : "cursor-pointer"}`}
+              className={`${seconds <= 0 && hour <= 0 && minutes <= 0 ? "cursor-not-allowed" : "cursor-pointer hover:scale-105  transition-all duration-200"}` }
+              title="Start Timer"
             />
           ) : (
-            <img src={pause} alt="pause" />
+            <img src={pause} alt="pause" className="cursor-pointer hover:scale-105  transition-all duration-200" title="Pause Timer"/>
           )}
         </div>
         {startTimer && seconds >= 0 && hour >= 0 && minutes >= 0 ? (
-          <img src={stop} alt="stop" onClick={stopTimer} />
+          <img src={stop} alt="stop" onClick={stopTimer} className="cursor-pointer hover:scale-105  transition-all duration-200" title="Stop Timer"/>
         
         ):""}
       </div>
